@@ -12,20 +12,34 @@ const MarkdownEditor: React.FC = () => {
         setMarkdown(newContent);
         localStorage.setItem('markdownContent', newContent); // 保存到本地存储
     };
+    const handleCopy = () => {
+        navigator.clipboard.writeText(markdown).then(() => {
+            alert('Markdown 已复制到剪贴板！');
+        }).catch(err => {
+            alert('复制失败: ' + err);
+        });
+    };
 
     return (
         <div className="markdown-editor-container">
-            <div className="editor">
-                <textarea
-                    value={markdown}
-                    onChange={handleChange}
-                    placeholder="在这里输入 Markdown 源代码..."
-                />
+            <div className="top-bar">
+                <button onClick={handleCopy} className="copy-button">
+                    复制 Markdown
+                </button>
             </div>
-            <div className="preview">
-                <ReactMarkdown>
-                    {markdown}
-                </ReactMarkdown>
+            <div className="content">
+                <div className="editor">
+                    <textarea
+                        value={markdown}
+                        onChange={handleChange}
+                        placeholder="在这里输入 Markdown 源代码..."
+                    />
+                </div>
+                <div className="preview">
+                    <ReactMarkdown>
+                        {markdown}
+                    </ReactMarkdown>
+                </div>
             </div>
         </div>
     );

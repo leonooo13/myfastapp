@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from './pages/Login';
 import Article from './pages/Article';
 import MarkdownEditor from './components/MarkdownViewer';
+import Profile from './pages/Profile';
 import './App.css'; // 如果有全局样式的话
 
 const App: React.FC = () => {
@@ -12,6 +13,7 @@ const App: React.FC = () => {
         <Route path="/" element={<MarkdownEditor />} />
         <Route path="/article" element={<Article />} />
         <Route path="/markdown" element={<Login />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </Router>
   );

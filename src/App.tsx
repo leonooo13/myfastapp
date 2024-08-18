@@ -1,11 +1,17 @@
 import React from 'react';
-import LoginForm from './components/LoginForm';
-import './components/LoginForm.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Login from './pages/Login';
+import Article from './pages/Article';
+import './App.css'; // 如果有全局样式的话
+
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <LoginForm />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/article" element={<Article />} />
+      </Routes>
+    </Router>
   );
 }
 

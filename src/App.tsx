@@ -5,6 +5,7 @@ import Article from './pages/Article';
 import MarkdownEditor from './components/MarkdownViewer';
 import Profile from './pages/Profile';
 import ResumeEditor from './pages/ResumeEditor';
+import LuTodo from './pages/LuTodo';
 import './App.css';
 
 const Navbar: React.FC = () => {
@@ -62,7 +63,7 @@ const App: React.FC = () => {
             <Route path="/login" element={<Login />} />
             <Route path="/profile" element={<Profile />} />
             <Route path='/resume' element={<ResumeEditor/>}/>
-            <Route path='/' element={<Profile/>}/>
+            <Route path='/' element={<LuTodo/>}/>
           </Routes>
         </main>
       </div>

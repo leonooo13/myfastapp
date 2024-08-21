@@ -1,5 +1,6 @@
 import React from 'react';
 import { HashRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { FaHome, FaMarkdown, FaNewspaper, FaUser, FaFileAlt, FaSignInAlt } from 'react-icons/fa';
 import Login from './pages/Login';
 import Article from './pages/Article';
 import MarkdownEditor from './components/MarkdownViewer';
@@ -7,37 +8,26 @@ import Profile from './pages/Profile';
 import ResumeEditor from './pages/ResumeEditor';
 import LuTodo from './pages/LuTodo';
 import './App.css';
+import './Navbar.css';
 
 const Navbar: React.FC = () => {
+  const navItems = [
+    { name: 'Home', icon: FaHome },
+    { name: 'Markdown Editor', icon: FaMarkdown },
+    { name: 'Article', icon: FaNewspaper },
+    { name: 'Profile', icon: FaUser },
+    { name: 'Resume', icon: FaFileAlt },
+    { name: 'Login', icon: FaSignInAlt },
+  ];
+
   return (
-    <nav style={{
-      backgroundColor: '#f8f9fa',
-      padding: '15px 0',
-      boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
-    }}>
-      <ul style={{
-        listStyle: 'none',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        margin: 0,
-        padding: 0
-      }}>
-        {['Home', 'Markdown Editor', 'Article', 'Profile', 'Resume', 'Login'].map((item, index) => (
-          <li key={index} style={{ margin: '0 15px' }}>
-            <Link 
-              to={item === 'Home' ? '/' : `/${item.toLowerCase().replace(' ', '')}`}
-              style={{
-                color: '#333',
-                textDecoration: 'none',
-                fontSize: '16px',
-                fontWeight: 500,
-                transition: 'color 0.3s ease'
-              }}
-              onMouseEnter={(e) => e.currentTarget.style.color = '#007bff'}
-              onMouseLeave={(e) => e.currentTarget.style.color = '#333'}
-            >
-              {item}
+    <nav className="navbar">
+      <ul>
+        {navItems.map((item, index) => (
+          <li key={index}>
+            <Link to={item.name === 'Home' ? '/' : `/${item.name.toLowerCase().replace(' ', '')}`}>
+              <item.icon />
+              {item.name}
             </Link>
           </li>
         ))}

@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/myfastapp/static/css/main.9d9fda9b.css",
-    "main.js": "/myfastapp/static/js/main.66e6fca4.js",
+    "main.js": "/myfastapp/static/js/main.87fbaee5.js",
     "static/js/453.7ebb4f11.chunk.js": "/myfastapp/static/js/453.7ebb4f11.chunk.js",
     "index.html": "/myfastapp/index.html",
     "main.9d9fda9b.css.map": "/myfastapp/static/css/main.9d9fda9b.css.map",
-    "main.66e6fca4.js.map": "/myfastapp/static/js/main.66e6fca4.js.map",
+    "main.87fbaee5.js.map": "/myfastapp/static/js/main.87fbaee5.js.map",
     "453.7ebb4f11.chunk.js.map": "/myfastapp/static/js/453.7ebb4f11.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9d9fda9b.css",
-    "static/js/main.66e6fca4.js"
+    "static/js/main.87fbaee5.js"
   ]
 }

@@ -26,7 +26,7 @@ const Navbar: React.FC = () => {
         {['Home', 'Markdown Editor', 'Article', 'Profile', 'Resume', 'Login'].map((item, index) => (
           <li key={index} style={{ margin: '0 15px' }}>
             <Link 
-              to={item === 'Home' ? '/' : `/${item.toLowerCase().replace(' ', '')}`}
+              to={item === 'Home' ? '/myfastapp' : `/myfastapp/${item.toLowerCase().replace(' ', '')}`}
               style={{
                 color: '#333',
                 textDecoration: 'none',
@@ -58,12 +58,14 @@ const App: React.FC = () => {
         <Navbar />
         <main style={{ flex: 1, padding: '20px' }}>
           <Routes>
-            <Route path="/markdown" element={<MarkdownEditor />} />
-            <Route path="/article" element={<Article />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path='/resume' element={<ResumeEditor/>}/>
-            <Route path='/' element={<LuTodo/>}/>
+            <Route path="/myfastapp">
+              <Route path="markdown" element={<MarkdownEditor />} />
+              <Route path="article" element={<Article />} />
+              <Route path="login" element={<Login />} />
+              <Route path="profile" element={<Profile />} />
+              <Route path='resume' element={<ResumeEditor/>}/>
+              <Route index element={<LuTodo/>}/>
+            </Route>
           </Routes>
         </main>
       </div>
